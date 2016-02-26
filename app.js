@@ -9,7 +9,7 @@ hello.innerHTML="Hello, World!";
 //Set background color of each <li> to yellow.
 //
 var listElements = document.getElementsByTagName('li');
-    for( var i=0; i<listElements.length; i++){
+for( var i=0; i<listElements.length; i++){
     listElements[i].style.backgroundColor = "yellow";
 }
 
@@ -31,9 +31,23 @@ essentials.addEventListener('click', function(event){
   if (event.target.tagName === "LI"){
     for(var i=0; i<listElements.length; i++){
         listElements[i].classList.remove('selected');
-        }
+    }
     event.target.classList.add('selected');
-        }
-    });
+    var newImg= event.target.innerHTML;
+    essentials.nextElementSibling.firstElementChild.src = "./images/"+newImg+".jpeg";
+  }
+
+
+
+
+
+});
+
+//Change the image to be the most recently clicked food item.
+//create an array of images
+
+//map array to each LI
+
+
 
 

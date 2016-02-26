@@ -45,10 +45,27 @@ ghost.addEventListener('mouseover', function(){
     this.remove(ghost);
 });
 
-//Double the size of the orange div on mouseover
+//Double the size of the orange div on mouseover and went back
 var resize = document.getElementById('resize');
-resize.addEventListener('mouseover', function(){
+resize.addEventListener('mouseenter', function(){
     this.style.width="400px";
+});
+resize.addEventListener('mouseleave', function(){
+    this.style.width="200px";
+});
+
+var reset = document.getElementById('reset');
+reset.addEventListener('click', function(){
+    for(var i=0; i<listElements.length; i++){
+        listElements[i].classList.remove('selected');
+    }
+    essentials.nextElementSibling.firstElementChild.src="./images/panic.jpeg";
+});
+
+window.addEventListener("keypress", function(e){
+    if (e.keyCode >= 48 && e.keyCode <= 57){ //|| //(e.keyCode >= 96 && e.keyCode <= 105)){ //0-9 only
+        alert("I HATE NUMBERZZZ");
+    }
 });
 
 

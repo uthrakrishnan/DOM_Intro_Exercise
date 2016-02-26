@@ -33,20 +33,25 @@ essentials.addEventListener('click', function(event){
         listElements[i].classList.remove('selected');
     }
     event.target.classList.add('selected');
+    //Change the image to be the most recently clicked food item.
     var newImg= event.target.innerHTML;
     essentials.nextElementSibling.firstElementChild.src = "./images/"+newImg+".jpeg";
   }
-
-
-
-
-
 });
 
-//Change the image to be the most recently clicked food item.
-//create an array of images
+//Remove gray div when moused over
+var ghost=document.getElementById('ghosting');
+ghost.addEventListener('mouseover', function(){
+    this.remove(ghost);
+});
 
-//map array to each LI
+//Double the size of the orange div on mouseover
+var resize = document.getElementById('resize');
+resize.addEventListener('mouseover', function(){
+    this.style.width="400px";
+});
+
+
 
 
 

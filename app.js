@@ -63,11 +63,26 @@ reset.addEventListener('click', function(){
 });
 
 window.addEventListener("keypress", function(e){
-    if (e.keyCode >= 48 && e.keyCode <= 57){ //|| //(e.keyCode >= 96 && e.keyCode <= 105)){ //0-9 only
+    //copied keycode from http://stackoverflow.com/questions/13196945/keycode-values-for-numeric-keypad
+    if (e.keyCode >= 48 && e.keyCode <= 57){ //|| (e.keyCode >= 96 && e.keyCode <= 105))
         alert("I HATE NUMBERZZZ");
     }
 });
 
+
+var konami="";
+window.addEventListener("keydown", function(e){
+    if(e.keyCode === 38 && konami != "38"){
+        konami ="";
+        konami += e.keyCode;
+    }
+    else {
+        konami += e.keyCode;
+    }
+    if (konami==="38384040373937396665"){
+        alert("Holy Shit");
+    }
+});
 
 
 
